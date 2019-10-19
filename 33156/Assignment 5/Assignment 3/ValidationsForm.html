@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Form</title>
+</head>
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+header h{
+    color: #111;
+}
+
+.footer{
+   
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#111;
+   color: white;
+   text-align: left;
+   opacity:0.65;
+   
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.footerFont{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+body {
+    background-image: url("3000534.jpg");
+}
+
+shadow{
+    text-shadow:3px 2px grey;
+}
+
+.quote{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:50px;
+    font-weight:bolder;
+    text-align:center;
+    background-color:grey;
+    opacity: 0.65;
+}
+
+.icon{
+    height: 40px;
+    width:40px;
+}
+
+.icon{
+    height: 40px;
+    width:40px;
+}
+
+.corner{
+    border:2px white;
+    padding:10px;
+    border-radius:40px;
+    height:30px;
+    width:400px;
+    opacity:0.6;
+}
+
+label{
+    font-size:18px;
+    width: 200px;
+    font-weight:bold;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.button{
+    border:1px solid wheat;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius: 40px;
+    height:40px;
+    width:200px;
+    opacity:0.8;
+}
+
+.button:hover {background-color: #fdd4e0}
+
+.button:active {
+  background-color: #fdd4e0;
+  box-shadow: 0 5px rgb(250, 160, 160);
+  transform: translateY(4px);
+}
+
+.box{
+    border:5px solid white;
+    padding-top:30px;
+    padding-bottom:30px;
+    padding-right:30px;
+    padding-left:30px;
+    border-radius: 20px;
+    width:500px;
+}
+
+.radiobtn{
+    border:1px white;
+    border-radius:5px;
+    height:15px;
+    width:35px;
+    opacity:0.6;
+}
+</style>
+<script type="text/javascript"> 
+function validations()								 
+{ 
+	var fname = document.forms["RegForm"]["FName"];	
+	var lname = document.forms["RegForm"]["LName"];			 
+	var email = document.forms["RegForm"]["EMail"]; 
+	var phone = document.forms["RegForm"]["Telephone"]; 
+	var password = document.forms["RegForm"]["Password"];
+	var password1=document.forms["RegForm"]["Password1"]; 
+	var char = /^[a-zA-Z\s]+$/;
+	var num = /^[1-9]\d{9}$/;
+	
+	if (fname.value == "")								 
+	{ 
+		window.alert("Please enter a valid first name."); 
+		fname.focus(); 
+		return false; 
+	}
+
+	if (!(fname.value.match(char)))								 
+	{ 
+		window.alert("Please enter a valid first name.");
+		fname.style.borderColor="red";
+		fname.focus();
+	}
+	else
+	{
+		fname.style.borderColor="green";
+		fname.focus();
+	}
+
+	if (lname.value == "")								 
+	{ 
+		window.alert("Please enter a valid last name."); 
+		lname.focus(); 
+		return false; 
+	}
+
+	if (!(lname.value.match(char)))								 
+	{ 
+		window.alert("Please enter a valid last name.");
+		lname.style.borderColor="red";
+		lname.focus();
+	}
+	else
+	{
+		lname.style.borderColor="green";
+		lname.focus();
+	}
+	
+	if (email.value == "")								 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+	if (password.value == "")					 
+	{ 
+		window.alert("Please enter your password"); 
+		password.focus(); 
+		return false; 
+	} 
+	if (password1.value == "")					 
+	{ 
+		window.alert("Please confirm your password"); 
+		password1.focus(); 
+		return false; 
+	} 
+	if(password.value!=password1.value)
+	{
+		window.alert("Passwords don't match"); 
+		password1.focus(); 
+		return false; 
+	}
+	if (phone.value == ""||num.test(phone) === false)						 
+	{ 
+		window.alert("Please enter your phone number."); 
+		phone.focus(); 
+		return false; 
+	} 
+	if(phone.value.length != 10)
+	{
+		window.alert("Please enter a valid phone number."); 
+		phone.focus(); 
+		return false; 
+	}
+	if (what.selectedIndex < 1)				 
+	{ 
+		alert("Please enter your course."); 
+		what.focus(); 
+		return false; 
+	} 
+	return true; 
+}
+
+
+
+function text_telephone()
+{
+
+	var tphone = document.forms["RegForm"]["Telephone"];
+	var char = /^[a-zA-Z\s]+$/;
+	if (!(tphone.value.match(int)))								 
+	{ 
+		//window.alert("hi");
+		fname.style.borderColor="red";
+		fname.focus();
+	}
+	else
+	{
+		fname.style.borderColor="green";
+		fname.focus();
+	}
+	
+}
+
+</script>
+
+<body>
+
+		<center><ul><header style="font-size:50px; color:aliceblue; padding-top:20px; padding-bottom:20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Alumni Network</header></ul></center>
+
+<br><br><br>
+
+		<center><form  name="RegForm" action="/submit.php" onsubmit="return validations()" method="post" autocomplete="off">
+	<div class="box">
+			<legend style="font-size:50px; font-weight:bolder;color: white;">Sign In</legend>
+	<br>
+	<table>
+		<tr>
+			<td>
+				<input class="corner" type="text" size=30 name="FName" maxlength="15" oninput="text_fname()" placeholder="First Name">
+			</td>
+		</tr>
+
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+
+		<tr>
+				<td>
+					<input class="corner" type="text" size=30 name="LName" maxlength="15" oninput="text_lname()" placeholder="Last Name">
+				</td>
+			</tr>
+
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+
+		<tr>
+			<td>
+				<input class="corner" type="date" type="date" size=30 name="bday" max="2001-12-31" min="1900-12-31" placeholder="Date of Birth">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+
+		<tr>
+			
+			<td>
+					<input class="radiobtn" type="radio" selected="selected" name="female" style="font-family: serif;"><label>Female</label>
+		 
+					<input class="radiobtn" type="radio" name="male"><label>Male</label>
+			
+					<input class="radiobtn" type="radio" name="other"><label>Other</label>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>
+					<input class="corner" type="text" size=30 name="EMail" placeholder="Email Id">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>
+					<input class="corner" type="text" maxlength="10" pattern="[1-9]{1}[0-9]{9}" title="Please enter exactly 10 digits" placeholder="Contact Number">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>
+					<input class="corner" type="text" placeholder="LinkedIn">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>
+					<input class="radiobtn" type="radio" selected="selected" name="comp style="color:white;"><label>Computer Science</label>
+					<input class="radiobtn" type="radio" name="it"><label>IT</label>
+					<input class="radiobtn" type="radio" name="entc"><label>ENTC</label>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>
+					<input class="corner" type="password" type="password" size=30 name="Password" placeholder="Password">
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+				<td>
+						<input class="corner" type="password" size=30 name="Password1" placeholder="Confirm Password">
+				</td>
+			</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</table>
+	<br><br>
+	<button class="button" value="Sign Up" name="Submit" type="submit" style="align-self: auto; color:black; font-weight:bold;">Sign Up</button>&nbsp;
+	<button class="button" type="reset" style="align-self:auto; color:black; font-weight: bold;">Reset</button>
+<br><br>
+</form>
+</center>
+
+<br><br><br>
+<div class="footer" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px; color:rgb(219, 152, 152); opacity:0.7; font-weight:bold;">
+		&nbsp;&nbsp;&nbsp;Follow us on<br><br>
+	  <div style="padding-bottom:5px;">&nbsp;&nbsp;<img src="facebook.png" class="icon">&nbsp;&nbsp;<img src="instagram.png" class="icon">&nbsp;&nbsp;<img src="twitter.png" class="icon">&nbsp;&nbsp;<img src="linkedIn.png" class="icon"></div>
+  </div>
+</body>
+</html>
